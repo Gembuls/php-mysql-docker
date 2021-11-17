@@ -1,21 +1,22 @@
 <?php
-        //Periksa Jika Formulir Di kirimkan, Masukan Data Formulir Ke Table Pengguna
-        if(isset($_POST['submit']))
-        {
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $mobile = $_POST['mobile'];
+    //Periksa Jika Formulir Di kirimkan, Masukan Data Formulir Ke Table Pengguna
+    if(isset($_POST['submit']))
+    {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $mobile = $_POST['mobile'];
 
-            //termasuk file koneksi database
-            include_once("config.php");
+        //termasuk file koneksi database
+        include_once("config.php");
 
-            //masuakn data pengguna ke dalam tabel
-            $result = mysqli_query($mysqli, "INSERT INTO users(name,email,mobile) VALUES('$name','$email','$mobile')");
+        //masuakn data pengguna ke dalam tabel
+        $result = mysqli_query($mysqli, "INSERT INTO users(name,email,mobile) VALUES('$name','$email','$mobile')");
 
-            //tampilkan Pesan Saat Pengguna di tambahkan
-            echo "pengguna berhasil di tambahkan. <a href='index.php'>View Users</a>";
-        }
-        ?>
+        //tampilkan Pesan Saat Pengguna di tambahkan
+        echo "pengguna berhasil di tambahkan. <a href='index.php'>View Users</a>";
+    }
+?>
+
 <html>
     <head>
         <title>Add Users</title>
